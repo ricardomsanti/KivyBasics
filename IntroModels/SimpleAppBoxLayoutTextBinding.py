@@ -12,19 +12,22 @@ class SimpleApp(App):
         #layout
         b = BoxLayout(orientation="vertical")
         
+        #other items
         
-        
-        #others
+        b1 = Button(text="bigger")
+        #bt2 = Button(text="smaller")
         t = TextInput(font_size=80, size_hint_y=None,  height=100)   
         l = Label(text ="default",
-                  font_size = 150)
+                  font_size = 100)
         
         #binding
         
         t.bind(text=l.setter("text"))
+        b1.bind(text=(l.size(50))
         
         
         #widget adding
+        b.add_widget(b1)
         b.add_widget(t)
         b.add_widget(l)
                 
