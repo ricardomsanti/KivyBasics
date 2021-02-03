@@ -15,23 +15,33 @@ class SimpleApp(App):
         #other items
         
         b1 = Button(text="bigger")
-        #bt2 = Button(text="smaller")
-        t = TextInput(font_size=80, size_hint_y=None,  height=100)   
+        #-------------------------------------------------------
+        t = TextInput(font_size=80, size_hint_y=None,  height=100) 
+        #-------------------------------------------------------  
         l = Label(text ="default",
                   font_size = 100)
         
-        #binding
         
+        #binding method for text input and the label's text
         t.bind(text=l.setter("text"))
-        b1.bind(text=(l.size(50))
+        
+        #binding method for pressing the button and the font size getting bigger
+        
+        self.b1.bind(on_press=self.b1_button)
+        
+        #funtion binde to the b1 button
+    
+    def b1_button(self, instance):
+        label = self.label.text
+        print(label)
         
         
-        #widget adding
-        b.add_widget(b1)
-        b.add_widget(t)
-        b.add_widget(l)
+    #widget adding
+    b.add_widget(b1)
+    b.add_widget(t)
+    b.add_widget(l)
                 
-        return b
+    return b
                     
 
 
